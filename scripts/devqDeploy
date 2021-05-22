@@ -1,0 +1,4 @@
+cd ../build
+make vigorlending.wasm
+cd ../scripts
+sh deploy-vigorlending.sh

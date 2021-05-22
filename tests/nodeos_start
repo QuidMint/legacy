@@ -1,0 +1,19 @@
+#/bin/bash
+
+ulimit -c unlimited
+ulimit -n 65535
+ulimit -s 64000
+
+CONFIGDIR=eosio/config
+DATADIR=eosio/data
+OPTS="--disable-replay-opts"
+
+mkdir -p $DATADIR
+
+if [ "$1" == "--clear" ]; then
+    rm -rf $DATADIR/*
+    OPTS="$OPTS --genesis-json eosio/config/genesis.json"
+fi
+
+echo "nodeos --config-dir $CONFIGDIR --data-dir $DATADIR $OPTS 2>&1"
+nodeos --config-dir $CONFIGDIR --data-dir $DATADIR $OPTS 2>&1

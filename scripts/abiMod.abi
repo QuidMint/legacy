@@ -1,0 +1,1504 @@
+{
+  "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+  "version": "eosio::abi/1.1",
+  "types": [
+    {
+      "new_type_name": "asset_container_t",
+      "type": "asset[]"
+    }
+  ],
+  "structs": [
+    {
+      "name": "acctsize",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "limit",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "acctstake",
+      "base": "",
+      "fields": [
+        {
+          "name": "owner",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "action",
+      "base": "",
+      "fields": [
+        {
+          "name": "account",
+          "type": "name"
+        },
+        {
+          "name": "name",
+          "type": "name"
+        },
+        {
+          "name": "authorization",
+          "type": "permission_level[]"
+        },
+        {
+          "name": "data",
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "name": "assetout",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "assetout",
+          "type": "asset"
+        },
+        {
+          "name": "memo",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "bailout",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "bailout_s",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "timestamp",
+          "type": "time_point"
+        },
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "bailoutid",
+          "type": "uint64"
+        },
+        {
+          "name": "type",
+          "type": "name"
+        },
+        {
+          "name": "pcts",
+          "type": "float64"
+        },
+        {
+          "name": "debt",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "collateral",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "recap1",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "recap2",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "recap3",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "recap3b",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "blockedins",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "blockeddebt",
+          "type": "asset_container_t"
+        }
+      ]
+    },
+    {
+      "name": "bailoutup",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "batchse",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "batchsize",
+          "type": "uint64"
+        },
+        {
+          "name": "stepdata",
+          "type": "uint64"
+        },
+        {
+          "name": "stepdata2",
+          "type": "uint64"
+        },
+        {
+          "name": "sumpcts",
+          "type": "float64"
+        },
+        {
+          "name": "excesspct",
+          "type": "float64"
+        },
+        {
+          "name": "l_pctl",
+          "type": "float64"
+        },
+        {
+          "name": "l_rmliq",
+          "type": "float64"
+        },
+        {
+          "name": "lastflag",
+          "type": "bool"
+        },
+        {
+          "name": "buser",
+          "type": "name"
+        },
+        {
+          "name": "bupuser",
+          "type": "name"
+        },
+        {
+          "name": "lastinsurer",
+          "type": "name"
+        },
+        {
+          "name": "assetcont",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "asset",
+          "type": "asset"
+        }
+      ]
+    },
+    {
+      "name": "cleanbailout",
+      "base": "",
+      "fields": [
+        {
+          "name": "batchSize",
+          "type": "uint32"
+        }
+      ]
+    },
+    {
+      "name": "clearconfig",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "config",
+      "base": "",
+      "fields": [
+        {
+          "name": "alphatest",
+          "type": "uint16"
+        },
+        {
+          "name": "soltarget",
+          "type": "uint16"
+        },
+        {
+          "name": "lsoltarget",
+          "type": "uint16"
+        },
+        {
+          "name": "maxtesprice",
+          "type": "uint16"
+        },
+        {
+          "name": "mintesprice",
+          "type": "uint16"
+        },
+        {
+          "name": "calibrate",
+          "type": "uint8"
+        },
+        {
+          "name": "maxtesscale",
+          "type": "uint8"
+        },
+        {
+          "name": "mintesscale",
+          "type": "uint8"
+        },
+        {
+          "name": "reservecut",
+          "type": "uint8"
+        },
+        {
+          "name": "savingscut",
+          "type": "uint8"
+        },
+        {
+          "name": "maxlends",
+          "type": "uint8"
+        },
+        {
+          "name": "freezelevel",
+          "type": "uint16"
+        },
+        {
+          "name": "assetouttime",
+          "type": "uint32"
+        },
+        {
+          "name": "initialvig",
+          "type": "uint16"
+        },
+        {
+          "name": "viglifeline",
+          "type": "uint8"
+        },
+        {
+          "name": "vigordaccut",
+          "type": "uint8"
+        },
+        {
+          "name": "newacctlim",
+          "type": "uint8"
+        },
+        {
+          "name": "newacctsec",
+          "type": "uint32"
+        },
+        {
+          "name": "reqstake",
+          "type": "uint16"
+        },
+        {
+          "name": "staketime",
+          "type": "uint32"
+        },
+        {
+          "name": "repanniv",
+          "type": "uint32"
+        },
+        {
+          "name": "maxdisc",
+          "type": "uint8"
+        },
+        {
+          "name": "exectype",
+          "type": "uint8"
+        },
+        {
+          "name": "minebuffer",
+          "type": "uint32"
+        },
+        {
+          "name": "gasfee",
+          "type": "uint64"
+        },
+        {
+          "name": "kickseconds",
+          "type": "uint32"
+        },
+        {
+          "name": "initmaxsize",
+          "type": "uint32"
+        },
+        {
+          "name": "assetintime",
+          "type": "uint32"
+        },
+        {
+          "name": "debtceiling",
+          "type": "uint64"
+        },
+        {
+          "name": "logcount",
+          "type": "uint64"
+        },
+        {
+          "name": "gatekeeper",
+          "type": "uint16"
+        },
+        {
+          "name": "liquidate",
+          "type": "uint16"
+        },
+        {
+          "name": "accountslim",
+          "type": "uint32"
+        },
+        {
+          "name": "mincollat",
+          "type": "uint64"
+        },
+        {
+          "name": "rexswitch",
+          "type": "uint8"
+        },
+        {
+          "name": "dataa",
+          "type": "uint64"
+        },
+        {
+          "name": "datab",
+          "type": "uint64"
+        },
+        {
+          "name": "datac",
+          "type": "uint64"
+        },
+        {
+          "name": "datad",
+          "type": "name"
+        },
+        {
+          "name": "proxycontr",
+          "type": "name"
+        },
+        {
+          "name": "proxypay",
+          "type": "name"
+        },
+        {
+          "name": "dactoken",
+          "type": "name"
+        },
+        {
+          "name": "oraclehub",
+          "type": "name"
+        },
+        {
+          "name": "daccustodian",
+          "type": "name"
+        },
+        {
+          "name": "vigordacfund",
+          "type": "name"
+        },
+        {
+          "name": "finalreserve",
+          "type": "name"
+        },
+        {
+          "name": "bailoutcr",
+          "type": "uint32"
+        },
+        {
+          "name": "bailoutupcr",
+          "type": "uint32"
+        }
+      ]
+    },
+    {
+      "name": "configure",
+      "base": "",
+      "fields": [
+        {
+          "name": "key",
+          "type": "name"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "croneosqueue",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "tag",
+          "type": "name"
+        },
+        {
+          "name": "action",
+          "type": "action"
+        },
+        {
+          "name": "due_date",
+          "type": "time_point_sec"
+        },
+        {
+          "name": "expiration",
+          "type": "time_point_sec"
+        },
+        {
+          "name": "repeat",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "croneosstats",
+      "base": "",
+      "fields": [
+        {
+          "name": "total_count",
+          "type": "uint64"
+        },
+        {
+          "name": "exec_count",
+          "type": "uint64"
+        },
+        {
+          "name": "cancel_count",
+          "type": "uint64"
+        },
+        {
+          "name": "expired_count",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "currency_stats",
+      "base": "",
+      "fields": [
+        {
+          "name": "supply",
+          "type": "asset"
+        },
+        {
+          "name": "max_supply",
+          "type": "asset"
+        },
+        {
+          "name": "issuer",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "dbgclrqueue",
+      "base": "",
+      "fields": [
+        {
+          "name": "numrows",
+          "type": "uint32"
+        }
+      ]
+    },
+    {
+      "name": "dbggivevig",
+      "base": "",
+      "fields": [
+        {
+          "name": "quantity",
+          "type": "uint64"
+        },
+        {
+          "name": "usrn",
+          "type": "name"
+        },
+        {
+          "name": "memo",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dbgresetall",
+      "base": "",
+      "fields": [
+        {
+          "name": "numrows",
+          "type": "uint32"
+        }
+      ]
+    },
+    {
+      "name": "deleteacnt",
+      "base": "",
+      "fields": [
+        {
+          "name": "owner",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "doassetout",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "assetout",
+          "type": "asset"
+        },
+        {
+          "name": "memo",
+          "type": "string"
+        },
+        {
+          "name": "exec",
+          "type": "bool"
+        },
+        {
+          "name": "partialupdate",
+          "type": "bool"
+        },
+        {
+          "name": "step",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "dodeleteacnt",
+      "base": "",
+      "fields": [
+        {
+          "name": "owner",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "doupdate",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "freezelevel",
+      "base": "",
+      "fields": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "globalstats",
+      "base": "",
+      "fields": [
+        {
+          "name": "solvency",
+          "type": "float64"
+        },
+        {
+          "name": "valueofcol",
+          "type": "float64"
+        },
+        {
+          "name": "valueofins",
+          "type": "float64"
+        },
+        {
+          "name": "scale",
+          "type": "float64"
+        },
+        {
+          "name": "svalueofcole",
+          "type": "float64"
+        },
+        {
+          "name": "svalueofins",
+          "type": "float64"
+        },
+        {
+          "name": "volume",
+          "type": "float64"
+        },
+        {
+          "name": "svalueofcoleavg",
+          "type": "float64"
+        },
+        {
+          "name": "pcts",
+          "type": "float64"
+        },
+        {
+          "name": "savings",
+          "type": "float64"
+        },
+        {
+          "name": "premiums",
+          "type": "float64"
+        },
+        {
+          "name": "rm",
+          "type": "float64"
+        },
+        {
+          "name": "earnrate",
+          "type": "float64"
+        },
+        {
+          "name": "savingsrate",
+          "type": "float64"
+        },
+        {
+          "name": "lastupdate",
+          "type": "time_point"
+        },
+        {
+          "name": "fee",
+          "type": "asset"
+        },
+        {
+          "name": "availability",
+          "type": "time_point[]"
+        },
+        {
+          "name": "totaldebt",
+          "type": "asset"
+        },
+        {
+          "name": "insurance",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "collateral",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "l_solvency",
+          "type": "float64"
+        },
+        {
+          "name": "l_valueofcol",
+          "type": "float64"
+        },
+        {
+          "name": "l_scale",
+          "type": "float64"
+        },
+        {
+          "name": "l_svalueofcole",
+          "type": "float64"
+        },
+        {
+          "name": "l_svalueofins",
+          "type": "float64"
+        },
+        {
+          "name": "l_svalueofcoleavg",
+          "type": "float64"
+        },
+        {
+          "name": "l_pcts",
+          "type": "float64"
+        },
+        {
+          "name": "l_premiums",
+          "type": "float64"
+        },
+        {
+          "name": "l_rm",
+          "type": "float64"
+        },
+        {
+          "name": "l_fee",
+          "type": "asset"
+        },
+        {
+          "name": "l_totaldebt",
+          "type": "asset"
+        },
+        {
+          "name": "step",
+          "type": "uint16"
+        },
+        {
+          "name": "ac",
+          "type": "uint64"
+        },
+        {
+          "name": "savingsscale",
+          "type": "float64"
+        },
+        {
+          "name": "kicktimer",
+          "type": "time_point"
+        },
+        {
+          "name": "bailoutuser",
+          "type": "name"
+        },
+        {
+          "name": "bailoutupuser",
+          "type": "name"
+        },
+        {
+          "name": "bailoutid",
+          "type": "uint64"
+        },
+        {
+          "name": "rexproxy",
+          "type": "uint64"
+        },
+        {
+          "name": "vigfees",
+          "type": "uint64"
+        },
+        {
+          "name": "totalvalue",
+          "type": "float64"
+        },
+        {
+          "name": "atimer",
+          "type": "time_point_sec"
+        },
+        {
+          "name": "l_collateral",
+          "type": "asset_container_t"
+        }
+      ]
+    },
+    {
+      "name": "kick",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "liquidate",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "liquidateup",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "log",
+      "base": "",
+      "fields": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "log_s",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uint64"
+        },
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "function",
+          "type": "name"
+        },
+        {
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "name": "timestamp",
+          "type": "time_point"
+        },
+        {
+          "name": "bailoutid",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "market_s",
+      "base": "",
+      "fields": [
+        {
+          "name": "sym",
+          "type": "symbol"
+        },
+        {
+          "name": "marketdata",
+          "type": "statspre"
+        }
+      ]
+    },
+    {
+      "name": "openaccount",
+      "base": "",
+      "fields": [
+        {
+          "name": "owner",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "pair_symbol_int64",
+      "base": "",
+      "fields": [
+        {
+          "name": "key",
+          "type": "symbol"
+        },
+        {
+          "name": "value",
+          "type": "int64"
+        }
+      ]
+    },
+    {
+      "name": "permission_level",
+      "base": "",
+      "fields": [
+        {
+          "name": "actor",
+          "type": "name"
+        },
+        {
+          "name": "permission",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "predoupdate",
+      "base": "",
+      "fields": [
+        {
+          "name": "step",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "reputation_s",
+      "base": "",
+      "fields": [
+        {
+          "name": "reputation",
+          "type": "float64"
+        },
+        {
+          "name": "reputation_pct",
+          "type": "float64"
+        },
+        {
+          "name": "vig_since_anniv",
+          "type": "asset"
+        },
+        {
+          "name": "rep_lag0",
+          "type": "asset"
+        },
+        {
+          "name": "rep_lag1",
+          "type": "asset"
+        },
+        {
+          "name": "rep_lag2",
+          "type": "asset"
+        },
+        {
+          "name": "anniv",
+          "type": "time_point"
+        }
+      ]
+    },
+    {
+      "name": "returncol",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "returnins",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        }
+      ]
+    },
+    {
+      "name": "setacctsize",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "limit",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "setconfig",
+      "base": "",
+      "fields": [
+        {
+          "name": "config",
+          "type": "config"
+        }
+      ]
+    },
+    {
+      "name": "stakeacnt",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "stake",
+          "type": "asset"
+        },
+        {
+          "name": "unlocktime",
+          "type": "time_point_sec"
+        }
+      ]
+    },
+    {
+      "name": "statspre",
+      "base": "",
+      "fields": [
+        {
+          "name": "freq",
+          "type": "uint32"
+        },
+        {
+          "name": "timestamp",
+          "type": "time_point"
+        },
+        {
+          "name": "price",
+          "type": "uint64[]"
+        },
+        {
+          "name": "returns",
+          "type": "int64[]"
+        },
+        {
+          "name": "correlation_matrix",
+          "type": "pair_symbol_int64[]"
+        },
+        {
+          "name": "vol",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "tick",
+      "base": "",
+      "fields": []
+    },
+    {
+      "name": "unwhitelist",
+      "base": "",
+      "fields": [
+        {
+          "name": "sym",
+          "type": "symbol"
+        }
+      ]
+    },
+    {
+      "name": "user_s",
+      "base": "",
+      "fields": [
+        {
+          "name": "usern",
+          "type": "name"
+        },
+        {
+          "name": "debt",
+          "type": "asset"
+        },
+        {
+          "name": "reputation",
+          "type": "reputation_s"
+        },
+        {
+          "name": "collateral",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "insurance",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "valueofcol",
+          "type": "float64"
+        },
+        {
+          "name": "valueofins",
+          "type": "float64"
+        },
+        {
+          "name": "tesprice",
+          "type": "float64"
+        },
+        {
+          "name": "earnrate",
+          "type": "float64"
+        },
+        {
+          "name": "pcts",
+          "type": "float64"
+        },
+        {
+          "name": "volcol",
+          "type": "float64"
+        },
+        {
+          "name": "txnvolume",
+          "type": "float64"
+        },
+        {
+          "name": "rewardsave",
+          "type": "float64"
+        },
+        {
+          "name": "prem",
+          "type": "float64"
+        },
+        {
+          "name": "svalueofinsx",
+          "type": "float64"
+        },
+        {
+          "name": "lastupdate",
+          "type": "time_point"
+        },
+        {
+          "name": "l_debt",
+          "type": "asset"
+        },
+        {
+          "name": "l_collateral",
+          "type": "asset_container_t"
+        },
+        {
+          "name": "l_valueofcol",
+          "type": "float64"
+        },
+        {
+          "name": "l_tesprice",
+          "type": "float64"
+        },
+        {
+          "name": "l_pcts",
+          "type": "float64"
+        },
+        {
+          "name": "l_volcol",
+          "type": "float64"
+        },
+        {
+          "name": "savings",
+          "type": "float64"
+        },
+        {
+          "name": "rewardrexvot",
+          "type": "float64"
+        },
+        {
+          "name": "l_prem",
+          "type": "float64"
+        },
+        {
+          "name": "l_svalueofinsx",
+          "type": "float64"
+        },
+        {
+          "name": "vigfees",
+          "type": "uint64"
+        },
+        {
+          "name": "rewardlend",
+          "type": "float64"
+        },
+        {
+          "name": "rewardlend2",
+          "type": "time_point_sec"
+        }
+      ]
+    },
+    {
+      "name": "whitelist",
+      "base": "",
+      "fields": [
+        {
+          "name": "sym",
+          "type": "symbol"
+        },
+        {
+          "name": "contract",
+          "type": "name"
+        },
+        {
+          "name": "feed",
+          "type": "name"
+        },
+        {
+          "name": "assetin",
+          "type": "bool"
+        },
+        {
+          "name": "assetout",
+          "type": "bool"
+        },
+        {
+          "name": "maxlends",
+          "type": "uint8"
+        }
+      ]
+    },
+    {
+      "name": "whitelist_s",
+      "base": "",
+      "fields": [
+        {
+          "name": "sym",
+          "type": "symbol"
+        },
+        {
+          "name": "contract",
+          "type": "name"
+        },
+        {
+          "name": "feed",
+          "type": "name"
+        },
+        {
+          "name": "assetin",
+          "type": "bool"
+        },
+        {
+          "name": "assetout",
+          "type": "bool"
+        },
+        {
+          "name": "maxlends",
+          "type": "uint8"
+        },
+        {
+          "name": "lendable",
+          "type": "asset"
+        },
+        {
+          "name": "lendablepct",
+          "type": "float64"
+        },
+        {
+          "name": "lentpct",
+          "type": "float64"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "acctstake",
+      "type": "acctstake",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Account Stake\nsummary: 'User {{nowrap owner}} stakes tokens to open an account.'\nicon:\n---\n\n{{owner}} agrees to stake tokens to open an account.\n\nRAM will deducted from {{owner}}’s resources to create the necessary records."
+    },
+    {
+      "name": "assetout",
+      "type": "assetout",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Asset Out\nsummary: 'Schedule an outbound token transfer'\nicon:\n---\n\n{{usern}} agrees to schedule the transfer of {{assetout}} out of the contract to {{usern}}'s account according to instructions on memo.\n\n{{#if memo}}There is a memo attached to the transfer stating:\n{{memo}}\n{{/if}}"
+    },
+    {
+      "name": "bailout",
+      "type": "bailout",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: bailout\nsummary: 'bailout assigns debt and collateral to insurers/lenders on loans that need to be recapitalized'\nicon:\n---\nbailout assigns debt and collateral to insurers/lenders on VIGOR loans that need to be recapitalized. \n\n{{$action.account}} agrees that bailout assigns debt and collateral to the insurer/lender: {{usern}} for a loan that needs to be recapitalized"
+    },
+    {
+      "name": "bailoutup",
+      "type": "bailoutup",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: bailoutup\nsummary: 'bailoutup assigns debt and collateral to insurers/lenders on crypto loans that need to be recapitalized'\nicon:\n---\nbailoutup assigns debt and collateral to insurers/lenders on loans that need to be recapitalized\n\n{{$action.account}}  agrees that bailoutup assigns debt and collateral to the insurer/lender: {{usern}} for a crypto loan that needs to be recapitalized"
+    },
+    {
+      "name": "cleanbailout",
+      "type": "cleanbailout",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: cleanbailout\nsummary: 'clean the bailout table of specified batch size of rows'\nicon:\n---\n{{$action.account}} agrees to clean the bailout table of specified batch size of rows, {{batchSize}} rows"
+    },
+    {
+      "name": "clearconfig",
+      "type": "clearconfig",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "configure",
+      "type": "configure",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Configure\nsummary: 'Set a key/value pair in the configuration table'\nicon:\n---\n\n{{$action.account}} agrees to set the key value pair: {{key}}, {{value}}"
+    },
+    {
+      "name": "dbgclrqueue",
+      "type": "dbgclrqueue",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "dbggivevig",
+      "type": "dbggivevig",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "dbgresetall",
+      "type": "dbgresetall",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "deleteacnt",
+      "type": "deleteacnt",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Delete Account\nsummary: 'The user account for {{nowrap owner}} is deleted'\nicon:\n---\n\n{{owner}} agrees to delete their user account.\n\nAll token balances on the account must be zero."
+    },
+    {
+      "name": "doassetout",
+      "type": "doassetout",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Do Asset Out\nsummary: 'Process a previously scheduled outbound token transfer'\nicon:\n---\n\nThis action is meant to either be run as a deferred transaction initiated by the self contract, or mined\n\n{{$action.account}} agrees to process a previously scheduled transfer of {{assetout}} out of the contract to {{usern}}'s account according to instructions on memo.\n\n{{#if memo}}There is a memo attached to the transfer stating:\n{{memo}}\n{{/if}}"
+    },
+    {
+      "name": "dodeleteacnt",
+      "type": "dodeleteacnt",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Delete Account Handler Action\nsummary: 'The user account for {{nowrap owner}} is deleted'\nicon:\n---\n\n{{owner}} agrees to delete their user account.\n\nAll token balances on the account must be zero."
+    },
+    {
+      "name": "doupdate",
+      "type": "doupdate",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Update All User and Global Data\nsummary: 'All user and global data is updated'\nicon:\n---\n\n{{$action.account}} agrees to update all user and global information on the contract.\n\nThis action updates all pricing, risk, performance, and runs bailouts if needed."
+    },
+    {
+      "name": "freezelevel",
+      "type": "freezelevel",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Freeze Level\nsummary: 'Set a key/value pair in the configuration table for the freeze level'\nicon:\n---\nThe freeze level will restrict users from interacting with certain actions in the contract\n\n{{$action.account}} agrees to set the key value pair: freezelevel, {{value}}"
+    },
+    {
+      "name": "kick",
+      "type": "kick",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: kick\nsummary: 'remove a user from the system'\nicon:\n---\nremoves a user from the system after unwinding any borrows and returning tokens to user\n\n{{$action.account}} agrees to removes {{usern}} from the system after unwinding any borrows and returning tokens to user"
+    },
+    {
+      "name": "liquidate",
+      "type": "liquidate",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: liquidate\nsummary: 'self liquidation for VIGOR debt'\nicon:\n---\nself liquidation for VIGOR debt, cost is a reduction of credit score\n\nuser can quickly exit a loan\n\nuser gives debt to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)\n\n{{$action.account}} agrees that {{usern}} gives VIGOR debt to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)"
+    },
+    {
+      "name": "liquidateup",
+      "type": "liquidateup",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: liquidateup\nsummary: 'self liquidationup for crypto debt (not VIGOR)'\nicon:\n---\nself liquidationup for crypto debt (not VIGOR), cost is a reduction of credit score\n\nuser can quickly exit a loan\n\nuser gives debt to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)\n\n{{$action.account}} agrees that {{usern}} gives crypto debt (not VIGOR) to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)"
+    },
+    {
+      "name": "log",
+      "type": "log",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Log\nsummary: 'writes a message into the log table'\nicon:\n---\nwrites a message into the log table\n\n{{$action.account}} agrees to write a message into the log table"
+    },
+    {
+      "name": "openaccount",
+      "type": "openaccount",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Open Account\nsummary: 'A user account is opened for {{nowrap owner}}'\nicon:\n---\n\n{{owner}} agrees to open a user account.\n\nRAM will deducted from {{owner}}’s resources to create the necessary records."
+    },
+    {
+      "name": "predoupdate",
+      "type": "predoupdate",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Set the step setting to desired level\nsummary: 'Set the step setting to desired level for batch processing through doupdate'\nicon:\n---\n\n{{$action.account}} sets the step setting to desired level for batch processing through doupdate."
+    },
+    {
+      "name": "returncol",
+      "type": "returncol",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: returncol\nsummary: 'all user collateral tokens are returned to them'\nicon:\n---\nall user collateral tokens are returned to them\n\n{{$action.account}}  agrees that all user collateral tokens are returned to: {{usern}}"
+    },
+    {
+      "name": "returnins",
+      "type": "returnins",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: returnins\nsummary: 'all user insurance tokens are returned to them'\nicon:\n---\nall user insurance tokens are returned to them\n\n{{$action.account}} agrees that all user insurance tokens are returned to: {{usern}}"
+    },
+    {
+      "name": "setacctsize",
+      "type": "setacctsize",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: setacctsize\nsummary: 'set the limit on total account size'\nicon:\n---\nset the limit on total account size\n\n{{$action.account}} agrees to set the limit on total account size for {{usern}} to {{limit}}"
+    },
+    {
+      "name": "setconfig",
+      "type": "setconfig",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "tick",
+      "type": "tick",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: tick\nsummary: 'tick calls an action in the actionqueue'\nicon:\n---\ntick calls an action in the actionqueue as an inline action\n\n{{$action.account}} agrees that tick will call an action in the actionqueue as an inline action"
+    },
+    {
+      "name": "unwhitelist",
+      "type": "unwhitelist",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: unwhitelist\nsummary: 'unwhitelist a token that is currently in use as collateral, insurance, borrowing'\nicon:\n---\nwhitelist a token for use as collateral, insurance, borrowing\n\n{{$action.account}} agrees to whitelist token symbol: {{sym}} with contract {{contract}} and price feed name {{feed}}"
+    },
+    {
+      "name": "whitelist",
+      "type": "whitelist",
+      "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: whitelist\nsummary: 'whitelist a token for use as collateral, insurance, borrowing'\nicon:\n---\nwhitelist a token for use as collateral, insurance, borrowing, (or update the contract and feed for an already existing token)\n\n{{$action.account}} agrees to whitelist token symbol: {{sym}} with contract {{contract}}, price feed name {{feed}}, bool to allow assetin {{assetin}} and assetout {{assetout}}, and a limit for percentage of lending pool lendable {{maxlends}}"
+    }
+  ],
+  "tables": [
+    {
+      "name": "acctsize",
+      "type": "acctsize",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "bailout",
+      "type": "bailout_s",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "batchse",
+      "type": "batchse",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "config",
+      "type": "config",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "croneosqueue",
+      "type": "croneosqueue",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "croneosstats",
+      "type": "croneosstats",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "globalstats",
+      "type": "globalstats",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "log",
+      "type": "log_s",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "market",
+      "type": "market_s",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "stake",
+      "type": "stakeacnt",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "stat",
+      "type": "currency_stats",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "user",
+      "type": "user_s",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    },
+    {
+      "name": "whitelist",
+      "type": "whitelist_s",
+      "index_type": "i64",
+      "key_names": [],
+      "key_types": []
+    }
+  ],
+  "ricardian_clauses": [],
+  "variants": [],
+  "error_messages": [],
+  "abi_extensions": []
+}

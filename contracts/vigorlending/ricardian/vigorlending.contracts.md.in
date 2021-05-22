@@ -1,0 +1,305 @@
+<h1 class="contract">openaccount</h1>
+
+---
+spec_version: "0.2.0"
+title: Open Account
+summary: 'A user account is opened for {{nowrap owner}}'
+icon:
+---
+
+{{owner}} agrees to open a user account.
+
+RAM will deducted from {{owner}}’s resources to create the necessary records.
+
+<h1 class="contract">acctstake</h1>
+
+---
+spec_version: "0.2.0"
+title: Account Stake
+summary: 'User {{nowrap owner}} stakes tokens to open an account.'
+icon:
+---
+
+{{owner}} agrees to stake tokens to open an account.
+
+RAM will deducted from {{owner}}’s resources to create the necessary records.
+
+<h1 class="contract">deleteacnt</h1>
+
+---
+spec_version: "0.2.0"
+title: Delete Account
+summary: 'The user account for {{nowrap owner}} is deleted'
+icon:
+---
+
+{{owner}} agrees to delete their user account.
+
+All token balances on the account must be zero.
+
+<h1 class="contract">dodeleteacnt</h1>
+
+---
+spec_version: "0.2.0"
+title: Delete Account Handler Action
+summary: 'The user account for {{nowrap owner}} is deleted'
+icon:
+---
+
+{{owner}} agrees to delete their user account.
+
+All token balances on the account must be zero.
+
+<h1 class="contract">doupdate</h1>
+
+---
+spec_version: "0.2.0"
+title: Update All User and Global Data
+summary: 'All user and global data is updated'
+icon:
+---
+
+{{$action.account}} agrees to update all user and global information on the contract.
+
+This action updates all pricing, risk, performance, and runs bailouts if needed.
+
+<h1 class="contract">doupdateold</h1>
+
+---
+spec_version: "0.2.0"
+title: Update All User and Global Data as inline
+summary: 'All user and global data is updated as inline'
+icon:
+---
+
+{{$action.account}} agrees to update all user and global information on the contract.
+
+This action updates all pricing, risk, performance, and runs bailouts if needed.
+
+<h1 class="contract">predoupdate</h1>
+
+---
+spec_version: "0.2.0"
+title: Set the step setting to desired level
+summary: 'Set the step setting to desired level for batch processing through doupdate'
+icon:
+---
+
+{{$action.account}} sets the step setting to desired level for batch processing through doupdate.
+
+<h1 class="contract">assetout</h1>
+
+---
+spec_version: "0.2.0"
+title: Asset Out
+summary: 'Schedule an outbound token transfer'
+icon:
+---
+
+{{usern}} agrees to schedule the transfer of {{assetout}} out of the contract to {{usern}}'s account according to instructions on memo.
+
+{{#if memo}}There is a memo attached to the transfer stating:
+{{memo}}
+{{/if}}
+
+<h1 class="contract">doassetout</h1>
+
+---
+spec_version: "0.2.0"
+title: Do Asset Out
+summary: 'Process a previously scheduled outbound token transfer'
+icon:
+---
+
+This action is meant to either be run as a deferred transaction initiated by the self contract, or mined
+
+{{$action.account}} agrees to process a previously scheduled transfer of {{assetout}} out of the contract to {{usern}}'s account according to instructions on memo.
+
+{{#if memo}}There is a memo attached to the transfer stating:
+{{memo}}
+{{/if}}
+
+<h1 class="contract">configure</h1>
+
+---
+spec_version: "0.2.0"
+title: Configure
+summary: 'Set a key/value pair in the configuration table'
+icon:
+---
+
+{{$action.account}} agrees to set the key value pair: {{key}}, {{value}}
+
+<h1 class="contract">freezelevel</h1>
+
+---
+spec_version: "0.2.0"
+title: Freeze Level
+summary: 'Set a key/value pair in the configuration table for the freeze level'
+icon:
+---
+The freeze level will restrict users from interacting with certain actions in the contract
+
+{{$action.account}} agrees to set the key value pair: freezelevel, {{value}}
+
+<h1 class="contract">log</h1>
+
+---
+spec_version: "0.2.0"
+title: Log
+summary: 'writes a message into the log table'
+icon:
+---
+writes a message into the log table
+
+{{$action.account}} agrees to write a message into the log table
+
+<h1 class="contract">kick</h1>
+
+---
+spec_version: "0.2.0"
+title: kick
+summary: 'remove a user from the system'
+icon:
+---
+removes a user from the system after unwinding any borrows and returning tokens to user
+
+{{$action.account}} agrees to removes {{usern}} from the system after unwinding any borrows and returning tokens to user
+
+<h1 class="contract">setacctsize</h1>
+
+---
+spec_version: "0.2.0"
+title: setacctsize
+summary: 'set the limit on total account size'
+icon:
+---
+set the limit on total account size
+
+{{$action.account}} agrees to set the limit on total account size for {{usern}} to {{limit}}
+
+<h1 class="contract">tick</h1>
+
+---
+spec_version: "0.2.0"
+title: tick
+summary: 'tick calls an action in the actionqueue'
+icon:
+---
+tick calls an action in the actionqueue as an inline action
+
+{{$action.account}} agrees that tick will call an action in the actionqueue as an inline action
+
+<h1 class="contract">bailout</h1>
+
+---
+spec_version: "0.2.0"
+title: bailout
+summary: 'bailout assigns debt and collateral to insurers/lenders on loans that need to be recapitalized'
+icon:
+---
+bailout assigns debt and collateral to insurers/lenders on VIGOR loans that need to be recapitalized. 
+
+{{$action.account}} agrees that bailout assigns debt and collateral to the insurer/lender: {{usern}} for a loan that needs to be recapitalized
+
+<h1 class="contract">bailoutup</h1>
+
+---
+spec_version: "0.2.0"
+title: bailoutup
+summary: 'bailoutup assigns debt and collateral to insurers/lenders on crypto loans that need to be recapitalized'
+icon:
+---
+bailoutup assigns debt and collateral to insurers/lenders on loans that need to be recapitalized
+
+{{$action.account}}  agrees that bailoutup assigns debt and collateral to the insurer/lender: {{usern}} for a crypto loan that needs to be recapitalized
+
+<h1 class="contract">returncol</h1>
+
+---
+spec_version: "0.2.0"
+title: returncol
+summary: 'all user collateral tokens are returned to them'
+icon:
+---
+all user collateral tokens are returned to them
+
+{{$action.account}}  agrees that all user collateral tokens are returned to: {{usern}}
+
+<h1 class="contract">returnins</h1>
+
+---
+spec_version: "0.2.0"
+title: returnins
+summary: 'all user insurance tokens are returned to them'
+icon:
+---
+all user insurance tokens are returned to them
+
+{{$action.account}} agrees that all user insurance tokens are returned to: {{usern}}
+
+<h1 class="contract">liquidate</h1>
+
+---
+spec_version: "0.2.0"
+title: liquidate
+summary: 'self liquidation for VIGOR debt'
+icon:
+---
+self liquidation for VIGOR debt, cost is a reduction of credit score
+
+user can quickly exit a loan
+
+user gives debt to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)
+
+{{$action.account}} agrees that {{usern}} gives VIGOR debt to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)
+
+<h1 class="contract">liquidateup</h1>
+
+---
+spec_version: "0.2.0"
+title: liquidateup
+summary: 'self liquidationup for crypto debt (not VIGOR)'
+icon:
+---
+self liquidationup for crypto debt (not VIGOR), cost is a reduction of credit score
+
+user can quickly exit a loan
+
+user gives debt to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)
+
+{{$action.account}} agrees that {{usern}} gives crypto debt (not VIGOR) to insuers/lenders along with an equivalent value of collateral (user retaining excess collateral)
+
+<h1 class="contract">whitelist</h1>
+
+---
+spec_version: "0.2.0"
+title: whitelist
+summary: 'whitelist a token for use as collateral, insurance, borrowing'
+icon:
+---
+whitelist a token for use as collateral, insurance, borrowing, (or update the contract and feed for an already existing token)
+
+{{$action.account}} agrees to whitelist token symbol: {{sym}} with contract {{contract}}, price feed name {{feed}}, bool to allow assetin {{assetin}} and assetout {{assetout}}, and a limit for percentage of lending pool lendable {{maxlends}}
+
+<h1 class="contract">unwhitelist</h1>
+
+---
+spec_version: "0.2.0"
+title: unwhitelist
+summary: 'unwhitelist a token that is currently in use as collateral, insurance, borrowing'
+icon:
+---
+whitelist a token for use as collateral, insurance, borrowing
+
+{{$action.account}} agrees to whitelist token symbol: {{sym}} with contract {{contract}} and price feed name {{feed}}
+
+<h1 class="contract">cleanbailout</h1>
+
+---
+spec_version: "0.2.0"
+title: cleanbailout
+summary: 'clean the bailout table of specified batch size of rows'
+icon:
+---
+{{$action.account}} agrees to clean the bailout table of specified batch size of rows, {{batchSize}} rows

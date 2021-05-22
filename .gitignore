@@ -1,0 +1,9 @@
+.vscode
+node_modules
+build
+tests/config/config.json
+sync.sh
+build-remote.sh
+*.env
+*.env.js
+*.env*

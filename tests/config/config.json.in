@@ -1,0 +1,81 @@
+{
+    "setup": {
+        "eosio": true,
+        "vigor": {
+            "vigorTokenContract": "create",
+            "vigorLendingContract": "create",
+            "tokenContracts": "create",
+            "oracleContract": "create",
+            "dataPreProcContract": "create",
+            "contractAccounts": true,
+            "feederAccounts": true,
+            "testAccounts": true
+        },
+        "oracles": {
+            "waitForFeeders": true
+        }
+    },
+    "walletPath" : "wallet",
+    "system" : {
+      "accounts": ["eosio.bpay", "eosio.msig", "eosio.names", "eosio.ram", "eosio.ramfee", "eosio.saving", "eosio.stake", "eosio.token", "eosio.vpay", "eosio.rex"],
+      "stakedAccounts": ["eosio.wrap"],
+      "contracts": ["eosio.msig", "eosio.token", "eosio.system", "eosio.bios"],
+      "contractsPath": "@EOSIO_CONTRACTS_PATH@"
+    },
+    "user" : {
+      "accounts" : [],
+      "testAccounts" : ["finalreserve", "vigordacfund", "account11111", "account11112", "account11113", "account11114", "account11115", "account11121", "account11122", "account11123"],
+      "contractAccounts": ["vigorlending", "vigortoken11", "vig111111111", "dummytokensx", "datapreproc2", "oracleoracl2"],
+      "feederAccounts": ["feeder111111", "feeder111112", "feeder111113"],
+      "contracts" : ["vigorlending", "eosio.token", "dummytokensx", "vig111111111", "datapreproc2"],
+      "contractsPath": "@VIGOR_CONTRACTS_PATH@"
+    },
+    "data": [{
+          "url": "https://api.newdex.io/v1/price?symbol=vig111111111-vig-eos",
+          "interval": 60000,
+          "contract": "oracleoracl2",
+          "pair": "vigeos",
+          "calculator": "parseInt(Math.round(jsonData.data.price * 1000000))",
+          "fixed": "parseInt(Math.round(0.000318 * 1000000))",
+          "permission": "active"
+      },{
+          "url": "https://api.newdex.io/v1/price?symbol=boidcomtoken-boid-eos",
+          "interval": 60000,
+          "contract": "oracleoracl2",
+          "pair": "boideos",
+          "calculator": "parseInt(Math.round(jsonData.data.price * 1000000))",
+          "fixed": "parseInt(Math.round(0.0000343 * 10000000))",
+          "permission": "active"
+      },{
+          "url": "https://api.newdex.io/v1/price?symbol=everipediaiq-iq-eos",
+          "interval": 60000,
+          "contract": "oracleoracl2",
+          "pair": "iqeos",
+          "calculator": "parseInt(Math.round(jsonData.data.price * 1000000))",
+          "fixed": "parseInt(Math.round(0.000272 * 1000000))",
+          "permission": "active"
+      },{
+          "url": "https://min-api.cryptocompare.com/data/price?fsym=EOS&tsyms=USD&e=coinbase",
+          "interval": 60000,
+          "contract": "oracleoracl2",
+          "pair": "eosusd",
+          "calculator": "parseInt(Math.round((jsonData.USD) * 10000))",
+          "fixed": "parseInt(Math.round((3.733) * 10000))",
+          "permission": "active"
+    }],
+    "tests": {
+        "resultsBasePath": "@EXPECTED_RESULTS_PATH@",
+        "stress": {
+            "enabled": false,
+            "accountGeneration": {
+                "prefix": "aaaaaaaaa",
+                "amount": 1000
+            }
+        },
+        "basic": {
+            "enabled": true
+        },
+        "fixedFeeders": true,
+        "contractInTestMode": true
+    }
+}

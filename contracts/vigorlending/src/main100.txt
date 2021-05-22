@@ -1,0 +1,54 @@
+TABLE globalstats {
+    double solvency = 1.0;
+    double valueofcol = 0.0;       // dollar value of collateral
+    double valueofins = 0.0;       // dollar value of insurance
+    double scale = 1.0;            // TES pricing model parameters are scaled to drive risk (solvency) to a target set by custodians.
+    double svalueofcole = 0.0;     // model suggested dollar value of the sum of all insufficient collateral in a stressed market SUM_i [ min((1 - svalueofcoli ) * valueofcoli - debti,0) ]
+    double svalueofins = 0.0;      // model suggested dollar value of the total insurance asset portfolio in a stress event. (1 - stressins ) * valueofins
+    double volume = 0.0;           // volume, sum of all transactions since last full update (_g.lastupdate), in dollars
+    double svalueofcoleavg = 0.0;  // model suggested dollar value of the sum of all insufficient collateral on average in down markets, expected loss
+    double pcts = 0.0;             // total sum of user pcts (percent contribution to solvency)
+    double savings = 0.0;          // total sum of user VIGOR in savings, units number of VIGOR
+    double premiums = 0.0;         // total dollar amount of premiums all borrowers would pay in one year to insure their collateral
+    double rm = 0.0;               // sum of weighted marginal contribution to risk (solvency)
+    double earnrate = 0.0;         // annualized rate of return on total portfolio of insurance crypto assets, insuring for downside and upside price jumps
+    double savingsrate = 0.0;
+    eosio::time_point lastupdate = eosio::current_time_point();  // time of last full update
+    eosio::asset fee = eosio::asset(0, VIG10_SYMBOL);            // VIG fees collected from VIGOR borrowers, for carrying debt for the time period since last transaction, and distributed
+    std::vector<eosio::time_point> availability;
+
+    eosio::asset totaldebt = eosio::asset(0, VIGOR_SYMBOL);  // VIGOR borrowed
+   protected:
+    asset_container_t insurance;
+    asset_container_t collateral;
+
+   public:
+    double l_solvency = 1.0;
+    double l_valueofcol = 0.0;                                 // dollar value of l_collateral
+    double l_scale = 1.0;                                      // TES pricing model parameters are scaled to drive risk (solvency) to a target set by custodians.
+    double l_svalueofcole = 0.0;                               // model suggested dollar value of the sum of all insufficient collateral in a stressed market SUM_i [ min((1 - svalueofcoli ) * valueofcoli - debti,0) ]
+    double l_svalueofins = 0.0;                                // model suggested dollar value of the total insurance asset portfolio in a stress event. ( 1.0 + l_stressins ) * valueofins
+    double l_svalueofcoleavg = 0.0;                            // model suggested dollar value of the sum of all insufficient collateral on average in up markets, expected loss
+    double l_pcts = 0.0;                                       // sum of user l_pcts (percent contribution to l_solvency)
+    double l_premiums = 0.0;                                   // total dollar amount of premiums all borrowers would pay in one year to insure their l_collateral
+    double l_rm = 0.0;                                         // sum of weighted marginal contribution to risk (l_solvency)
+    eosio::asset l_fee = eosio::asset(0, VIG10_SYMBOL);        // VIG fees collected and distributed from VIGOR borrowers, for carrying debt for the time period since last transaction
+    eosio::asset l_totaldebt = eosio::asset(0, VIGOR_SYMBOL);  // VIGOR locked as collateral
+    uint16_t step = 0;                                         // current step in doupdate. step 0 is clean, anything else means contract is updating at that step.
+    uint64_t ac = 0;                                           // number of users
+    double savingsscale = 1.0;                                 // scale factor applied to savingscut. when VIGOR feed price is below 1.0 then savingsscale is > 1.0 thus increasing the savings rate to incentivise hodling/locking VIGOR into savings (and vice versa)
+    eosio::time_point kicktimer = eosio::current_time_point();
+    eosio::name bailoutuser;
+    eosio::name bailoutupuser;
+    uint64_t bailoutid = 0;
+    uint64_t rexproxy = 0;         // accumulated REX rewards and proxy voter rewards since last time distribution to users (distribution controlled by _config.getRexSwitch()), units number of EOS * pow(10,4)
+    uint64_t vigfees = 0;          // total sum number of VIG in all users vigfees
+    double totalvalue = 0;         // total value of all users as of last full update (_g.lastupdate,) , in dollars, ins + col - debt
+    eosio::time_point_sec atimer;  // timer for limiting a user total dollar amount of outbound transactions
+   protected:
+    asset_container_t l_collateral;
+
+   public:
+    asset_container getInsurances() const { return asset_container(insurance); }
+    asset_container getCollaterals() const { return asset_container(collateral); }
+    asset_container getLCollaterals() const { return asset_container(l_collateral); }

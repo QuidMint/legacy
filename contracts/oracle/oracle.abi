@@ -1,0 +1,306 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "claim",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "clear",
+            "base": "",
+            "fields": [
+                {
+                    "name": "pair",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "configure",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "datapoints",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "value",
+                    "type": "uint64"
+                },
+                {
+                    "name": "median",
+                    "type": "uint64"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "time_point"
+                }
+            ]
+        },
+        {
+            "name": "global",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "total_datapoints_count",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "pairs",
+            "base": "",
+            "fields": [
+                {
+                    "name": "active",
+                    "type": "bool"
+                },
+                {
+                    "name": "bounty_awarded",
+                    "type": "bool"
+                },
+                {
+                    "name": "bounty_edited_by_custodians",
+                    "type": "bool"
+                },
+                {
+                    "name": "proposer",
+                    "type": "name"
+                },
+                {
+                    "name": "aname",
+                    "type": "name"
+                },
+                {
+                    "name": "bounty_amount",
+                    "type": "asset"
+                },
+                {
+                    "name": "approving_custodians",
+                    "type": "name[]"
+                },
+                {
+                    "name": "approving_oracles",
+                    "type": "name[]"
+                },
+                {
+                    "name": "base_symbol",
+                    "type": "symbol"
+                },
+                {
+                    "name": "base_type",
+                    "type": "uint64"
+                },
+                {
+                    "name": "base_contract",
+                    "type": "name"
+                },
+                {
+                    "name": "quote_symbol",
+                    "type": "symbol"
+                },
+                {
+                    "name": "quote_type",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quote_contract",
+                    "type": "name"
+                },
+                {
+                    "name": "quoted_precision",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "producer_info",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "total_votes",
+                    "type": "float64"
+                },
+                {
+                    "name": "is_active",
+                    "type": "bool"
+                },
+                {
+                    "name": "url",
+                    "type": "string"
+                },
+                {
+                    "name": "unpaid_blocks",
+                    "type": "uint32"
+                },
+                {
+                    "name": "last_claim_time",
+                    "type": "time_point"
+                },
+                {
+                    "name": "location",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "quote",
+            "base": "",
+            "fields": [
+                {
+                    "name": "value",
+                    "type": "uint64"
+                },
+                {
+                    "name": "pair",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "stats",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "time_point"
+                },
+                {
+                    "name": "count",
+                    "type": "uint64"
+                },
+                {
+                    "name": "last_claim",
+                    "type": "uint64"
+                },
+                {
+                    "name": "balance",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "sender",
+                    "type": "uint64"
+                },
+                {
+                    "name": "receiver",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "write",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "quotes",
+                    "type": "quote[]"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "claim",
+            "type": "claim",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "clear",
+            "type": "clear",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "configure",
+            "type": "configure",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "write",
+            "type": "write",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "datapoints",
+            "type": "datapoints",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "global",
+            "type": "global",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "pairs",
+            "type": "pairs",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "producers",
+            "type": "producer_info",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "stats",
+            "type": "stats",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}

@@ -1,0 +1,28 @@
+To build the contracts just follow these simple instructions:
+
+> mkdir -p build
+> cd build
+> cmake ..
+> make
+
+If your pacience is short and want to build faster, you can
+
+> make -jx
+
+where x is the number of cores you'd like to use for the build
+
+The built contracts will be inside the contracts (build/contracts) directory.
+
+
+To install, just type
+
+> sudo make install
+
+This will install the contract relevant file into /usr/local. This can be changed with -DCMAKE_INSTALL_PREFIX=<path>.
+Alternatively, and best for development, install locally on the build directory
+
+> DESTDIR=. make install
+
+And you'll find clean directories with the relevant contract files in build/usr/local/contracts
+
+That's it...have fun!!!
